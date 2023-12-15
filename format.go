@@ -134,6 +134,8 @@ func (g *Grid) parseFlags(flags ...string) error {
 			if err != nil {
 				return err
 			}
+		case "Headline":
+			g.Headline = arg[1]
 		case "Wrap":
 			g.Wrap, err = stringToBool(arg[1])
 			if err != nil {
