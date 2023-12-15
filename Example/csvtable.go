@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	csvtable "github.com/rmasci/csvformat"
+	"github.com/rmasci/csvtable"
 )
 
 func main() {
@@ -14,6 +14,12 @@ func main() {
 		fmt.Println("Error Reading File", err)
 		os.Exit(1)
 	}
-	out, err = csvtable.Table(string(cBytes), "Render=simple")
+	g := csvtable.NewGrid()
+	if len(os.Args) <= 1 {
+		g.Render = "mysql"
+	} else {
+		g.Render = os.Args[1]
+	}
+	out, err = g.Gridout(string(cBytes))
 	fmt.Println(out)
 }
