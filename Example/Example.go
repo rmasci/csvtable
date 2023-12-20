@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	// Notice: No header. You can specify that with 'Headline'
+	// Notice: No header. You can specify that with 'Header'
 	csvtext := fmt.Sprintf("One,Two,Three\nFour,Five,Six\nSeven,Eight,Nine")
 	csvgrid := csvtable.NewGrid()
-	csvgrid.Headline = "First,Second,Third" // This is optional. If the CSV already contains a heading line. don't set this.
+	csvgrid.Header = "First,Second,Third" // This is optional. If the CSV already contains a heading line. don't set this.
 	if len(os.Args) <= 1 {
 		csvgrid.Render = "simple"
 	} else {

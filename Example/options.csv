@@ -1,0 +1,6 @@
+Option,Description,Usage
+Render, How you want the table to be formatted,Render=Grid
+Align,Left Center Right,Align=Left
+NoHeader,True/False,NoHeader=False
+Wrap,Wrap Text in cells,Wrap=true
+Header,Specify Header,Header=One Two Three
